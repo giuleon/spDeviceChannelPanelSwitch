@@ -10,10 +10,10 @@ Requires jQuery, you can include:
 */
 
 $(function () {
-    ///Detecting edit mode
+    // Detecting edit mode
     var inDesignMode = document.forms[MSOWebPartPageFormName].MSOLayout_InDesignMode.value;
     if (inDesignMode == "1") {
-        //  The page is in edit mode
+        // The page is in edit mode
         // Verify div DeviceChannelPanel exist
         var devChannExist = $("body").find("[data-name='" + 'DeviceChannelPanel' + "']");
         var typeDevChann = getCookie('editDeviceChannel');
@@ -90,19 +90,15 @@ function WriteCookie() {
 }
 function WriteCookieMobile() {
     cookievalue = 'Mobile;';
-    //document.cookie = "deviceChannel=" + cookievalue;
     document.cookie = "editDeviceChannel=" + cookievalue;
 }
 function WriteCookieFullSite() {
     cookievalue = 'Default;';
-    //document.cookie = "deviceChannel=" + cookievalue;
     document.cookie = "editDeviceChannel=" + cookievalue;
 }
 function SwitchMobileSite() {
     WriteCookieMobile();
-    //window.location.reload();
 }
 function SwitchFullSite() {
     WriteCookieFullSite();
-    //window.location.reload();
 }
